@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Inspired Homepage</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body,
+        html {
+            height: 100%;
+            overflow: hidden;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .video-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1;
+            transition: opacity 2s ease-out;
+        }
+
+        .video-container.fade-out {
+            opacity: 0;
+        }
+
+        .video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .main-content {
+            display: none;
+            position: relative;
+            z-index: 0;
+        }
+
+        header {
+            border-radius: 3cm;
+            height: 80px;
+            max-width: 1200px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fa1a2511;
+            padding: 10px 20px;
+            margin: 0 auto;
+        }
+
+        /* Logo styling */
+        .lg {
+            margin-top: 35px;
+            width: 200px;
+            height: 220px;
+            background-image: url(pyro1.jpg.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        nav.elements {
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            /* Adds space between list items */
+        }
+
+        /* Hover effects on navigation links */
+        nav.elements ul li a {
+            color: rgb(228, 95, 18);
+            text-decoration: none;
+            font-size: 1.4rem;
+            padding: 8px 12px;
+            border-radius: 5px;
+            font-family: 'Playfair Display', serif;
+            transition: color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+        }
+
+        nav.elements ul li a:hover {
+            color: #0366d6;
+            box-shadow: 0px 4px 12px rgba(3, 102, 214, 0.5);
+            transform: translateY(-3px);
+            cursor: pointer;
+        }
+
+        .hero {
+            background-image: url("infra.jpeg");
+            background-size: cover;
+            background-position: center;
+            color: rgb(37, 18, 18);
+            height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero-content {
+            max-width: 600px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+
+            font-family: 'Poppins', sans-serif;
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 30px;
+        }
+
+        .cta-button {
+            background-color: #28a745;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #218838;
+        }
+
+        footer {
+            background-color: #24292e;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="video-container">
+        <video autoplay muted>
+            <source src="animatedlogo.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <div class="main-content">
+        <header>
+            <div class="lg"></div>
+            <nav class="elements">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Framework</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Where the world builds software</h1>
+                <p>Millions of developers and companies build, ship, and maintain their software on MyGitHub.</p>
+                <a href="#" class="cta-button">Sign up for MyGitHub</a>
+            </div>
+        </section>
+
+        <footer>
+            <p>© 2024 MyGitHub, Inc. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Fade out the video and show main content after 7 seconds
+        setTimeout(function () {
+            document.querySelector('.video-container').classList.add('fade-out');
+        }, 5000);
+
+        setTimeout(function () {
+            document.querySelector('.video-container').style.display = 'none';
+            document.querySelector('.main-content').style.display = 'block';
+            document.body.style.overflow = 'auto';
+        }, 7000);
+    </script>
+</body>
+
+</html>
