@@ -63,7 +63,6 @@
             margin: 0 auto;
         }
 
-        /* Logo styling */
         .lg {
             margin-top: 35px;
             width: 200px;
@@ -82,10 +81,8 @@
             list-style: none;
             display: flex;
             gap: 20px;
-            /* Adds space between list items */
         }
 
-        /* Hover effects on navigation links */
         nav.elements ul li a {
             color: rgb(228, 95, 18);
             text-decoration: none;
@@ -94,6 +91,14 @@
             border-radius: 5px;
             font-family: 'Playfair Display', serif;
             transition: color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+        }
+
+        /* Default hover styling for Home link */
+        nav.elements ul li a[data-section="home"] {
+            color: #0366d6;
+            box-shadow: 0px 4px 12px rgba(3, 102, 214, 0.5);
+            transform: translateY(-3px);
+            cursor: pointer;
         }
 
         nav.elements ul li a:hover {
@@ -123,10 +128,17 @@
         .hero h1 {
             font-size: 2.5rem;
             margin-bottom: 20px;
-
             font-family: 'Poppins', sans-serif;
             font-size: 3rem;
             margin-bottom: 20px;
+           
+        }
+         #wher{
+            background-color: #28a746a9;
+
+        }
+        #soft{
+            background-color: #28a745;
         }
 
         .hero p {
@@ -149,12 +161,168 @@
             background-color: #218838;
         }
 
+        section {
+            padding: 50px 20px;
+        }
+
         footer {
             background-color: #24292e;
             color: white;
             text-align: center;
             padding: 20px;
         }
+        #framework h2{
+            color: blue;
+            font-weight: 300;
+        }
+        /* General Section Styling */
+#framework {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 40px;
+    background-color: #f7f9fa;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Heading Styling */
+#framework h2 {
+    font-size: 2.5rem;
+    color: #333;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-bottom: 20px;
+}
+
+#framework h3 {
+    font-size: 1.75rem;
+    color: #444;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* Paragraph Styling */
+#framework p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+/* Specific Styling for Lists (if needed) */
+#framework ul {
+    margin: 20px 0;
+    padding-left: 20px;
+}
+
+#framework ul li {
+    margin-bottom: 10px;
+}
+
+/* Improve Link Visibility */
+#framework a {
+    color: #0366d6;
+    text-decoration: none;
+}
+
+#framework a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    #framework {
+        padding: 20px;
+    }
+
+    #framework h2 {
+        font-size: 2rem;
+    }
+
+    #framework h3 {
+        font-size: 1.5rem;
+    }
+
+    #framework p {
+        font-size: 0.9rem;
+    }
+}
+/* Styling for Image Row */
+.image-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+    gap: 10px;
+}
+
+.image-row img {
+    width: 100%;
+    max-width: 30%;  /* Each image takes up 30% of the container's width */
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    .image-row {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .image-row img {
+        max-width: 100%; /* Images stack vertically */
+    }
+}
+
+/* General Section Styling */
+#about {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 40px;
+    background-color: #f7f9fa;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Heading Styling */
+#about h2 {
+    font-size: 2.5rem;
+    color: #333;
+    text-align: center;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+    margin-bottom: 20px;
+}
+
+/* Paragraph Styling */
+#about p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    #about {
+        padding: 20px;
+    }
+
+    #about h2 {
+        font-size: 2rem;
+    }
+
+    #about p {
+        font-size: 0.9rem;
+    }
+}
+
     </style>
 </head>
 
@@ -172,20 +340,70 @@
             <div class="lg"></div>
             <nav class="elements">
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Framework</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="#" data-section="home">Home</a></li>
+                    <li><a href="#" data-section="framework">Framework</a></li>
+                    <li><a href="#" data-section="about">About</a></li>
+                    <li><a href="#" data-section="contact">Contact</a></li>
                 </ul>
             </nav>
         </header>
 
-        <section class="hero">
+        <section id="home" class="hero">
             <div class="hero-content">
-                <h1>Where the world builds software</h1>
+                <h1 id="Wher">Where the world builds 
+                    <h1 id="soft">software</h1>
                 <p>Millions of developers and companies build, ship, and maintain their software on MyGitHub.</p>
                 <a href="#" class="cta-button">Sign up for MyGitHub</a>
             </div>
+        </section>
+
+        <section id="framework">
+            <h2>Framework</h2>
+            <p>
+                Our Fever Detection System is designed to enhance public health and safety by providing an automated, efficient means of identifying individuals with elevated body temperatures. Here, we provide a comprehensive guide to setting up, operating, and maintaining the device, along with best practices for data handling to ensure privacy and compliance.</p>
+                
+                <h3>Setup Instructions</h3>
+            <p>
+                The system requires minimal setup. Begin by securely mounting the Raspberry Pi 4 and MLX90640 thermal camera in a stable location with a clear view of the area you wish to monitor. Connect all necessary components and power on the device, ensuring a stable internet connection for real-time data uploads and alerts. Calibration is vital: use OpenCV’s temperature thresholding capabilities to set baseline temperatures, adjusting for optimal sensitivity to detect feverish temperatures accurately.
+            </p>   
+                
+                <h3>Operational Guidelines</h3>
+                <p>
+                    Once set up, the system operates autonomously, monitoring body temperatures in real time. Configure the system through the user-friendly web interface built on Node.js and Express, allowing you to set alert thresholds and adjust scanning frequency. When the system detects a fever, it triggers immediate alerts through a connected dashboard. High-throughput processing capabilities allow it to scan large groups quickly, ideal for use in public spaces like airports, schools, or events.
+                
+                </p>
+                <div class="image-row">
+                    <img src="img1.jpg" alt="Setup of Fever Detection System">
+                    <img src="img2.jpg" alt="System Operation in Public Space">
+                    <img src="img3.jpg" alt="Temperature Scanning Interface">
+                </div>
+                
+               <h3>Safety Precautions</h3> 
+               <p>
+                For optimal performance and user safety, place the device in well-ventilated areas away from reflective surfaces that may affect temperature readings. To maintain sensor accuracy, avoid extreme environmental temperatures and periodic recalibrate as necessary.
+                
+               </p> 
+               <h3> Maintenance and Troubleshooting</h3>
+               <p>Routine maintenance is simple but essential for sustained accuracy. Regularly check the device’s power and network connections, inspect the thermal camera lens, and use the interface to ensure correct readings. In case of sensor discrepancies, recalibrate the camera using OpenCV’s calibration functions. </p> 
+                
+                <h3> Privacy and Data Management</h3>
+               <p>This system leverages MongoDB for secure data logging, storing only essential information, including temperature readings, timestamps, and alert records. We prioritize data privacy: ensure compliance with privacy standards by configuring data retention periods and using encrypted storage options in MongoDB. Follow secure access protocols to restrict dashboard access to authorized personnel, preserving privacy while maintaining the system’s effectiveness.</p> 
+        </section>
+
+        <section id="about">
+            <h2>About</h2>
+            <p>Our Fever Detection System is a forward-thinking solution designed to bolster public health and safety in high-traffic environments. By leveraging advanced thermal imaging and data analysis, this system accurately detects elevated body temperatures, an early indicator of potential health concerns, including infectious diseases. Built around the Raspberry Pi 4 and the MLX90640 thermal camera, our system offers a cost-effective yet highly reliable approach to screening, capable of identifying individuals with fevers in real-time without invasive procedures.
+
+                The system’s functionality centers on sophisticated machine learning models and OpenCV, allowing it to differentiate between feverish and non-feverish individuals by setting accurate temperature thresholds. Integrated with Node.js and MongoDB, it provides a seamless interface for users, with customizable alert systems, data logging, and secure storage for monitoring trends over time. The web interface makes it easy for operators to adjust settings, analyze patterns, and ensure consistent performance.
+                
+                Moreover, privacy is a top priority. The Fever Detection System complies with data protection standards by anonymizing temperature readings and using encrypted storage, ensuring that users’ personal health information remains secure. Designed for ease of use, it requires minimal setup and maintenance, making it accessible for various sectors such as airports, schools, hospitals, and workplaces.
+                
+                Ultimately, this system represents a proactive approach to health monitoring, aiming to create safer public spaces through fast, accurate temperature checks. Its automated design, combined with robust data management, offers a scalable solution for early detection and timely response, contributing positively to community well-being and public safety.</p>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>Your Contact content here...</p>
         </section>
 
         <footer>
@@ -197,13 +415,26 @@
         // Fade out the video and show main content after 7 seconds
         setTimeout(function () {
             document.querySelector('.video-container').classList.add('fade-out');
-        }, 5000);
+        }, 5000); //5
 
         setTimeout(function () {
             document.querySelector('.video-container').style.display = 'none';
             document.querySelector('.main-content').style.display = 'block';
             document.body.style.overflow = 'auto';
-        }, 7000);
+        }, 7000); //7
+
+        // Smooth scroll to section
+        document.querySelectorAll('nav.elements ul li a').forEach(link => {
+            link.addEventListener('click', function (event) {
+                event.preventDefault();
+                const section = document.getElementById(this.getAttribute('data-section'));
+                section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                
+                // Update hover style for selected link
+                document.querySelectorAll('nav.elements ul li a').forEach(el => el.style.color = '');
+                this.style.color = '#0366d6';
+            });
+        });
     </script>
 </body>
 
