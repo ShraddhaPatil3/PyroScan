@@ -12,69 +12,92 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-color: #f0f0f0;
+            background: linear-gradient(135deg, #fff, #383838);
             font-family: Arial, sans-serif;
+            color: #fff;
+            overflow: hidden;
         }
 
         /* Title styling */
         h1 {
             position: absolute;
-            top: 20px;
+            top: 10px;
             text-align: center;
             width: 100%;
-            color: #333;
+            font-size: 3rem;
+            font-weight: bold;
+            color: #ffd700;
+            letter-spacing: 3px;
+            text-shadow: 0px 4px 5px rgba(0, 0, 0, 0.3);
+            animation: colorShift 2s infinite alternate ease-in-out;
+        }
+
+        /* Title color change animation */
+        @keyframes colorShift {
+            0% {
+                color: #4800ff;
+            }
+            100% {
+                color: #ff5252;
+            }
         }
 
         /* Container for the boxes */
         .stream-container {
             display: flex;
             gap: 2rem;
+            margin-top: 5rem;
         }
 
-        /* Left box containing video feed */
-        .video-box {
+        /* Box styling */
+        .video-box, .camera-box {
             width: 15cm;
-            height: 10cm;
-            background-color: #333;
+            height: 11cm;
+            background-color: #000;
+            border-radius: 10px;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
         }
 
-        /* Right box with animated border */
-        .camera-box {
-            width: 10cm;
-            height: 10cm;
-            border: 4px solid transparent;
-            border-radius: 5px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            animation: borderAnimation 2s linear infinite;
-        }
-
-        /* Border animation for right box */
-        @keyframes borderAnimation {
-            0% {
-                border-color: #ff5252;
-            }
-            50% {
-                border-color: #ffd700;
-            }
-            100% {
-                border-color: #ff5252;
-            }
-        }
-
-        /* Video styling */
-        video {
+        /* Video box styling */
+        .video-box video {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            border-radius: 5px;
         }
 
-        /* Placeholder text for live stream box */
+        /* Animated border for camera box */
+        .camera-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 4px solid transparent;
+            border-radius: 10px;
+            background-color: #111;
+            box-shadow: 0 0 15px rgba(255, 82, 82, 0.5);
+            animation: borderGlow 3s infinite alternate ease-in-out;
+        }
+
+        /* Border glow color animation */
+        @keyframes borderGlow {
+            0% {
+                border-color: #ff5252;
+                box-shadow: 0 0 15px rgba(255, 82, 82, 0.5);
+            }
+            100% {
+                border-color: #ffd700;
+                box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+            }
+        }
+
+        /* Placeholder text styling for live stream */
         .camera-placeholder {
             color: #888;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-shadow: 0px 4px 5px rgba(0, 0, 0, 0.5);
         }
     </style>
 </head>
@@ -87,10 +110,10 @@
     <div class="stream-container">
         <!-- Left box for playing feed.mp4 -->
         <div class="video-box">
-            <video src="elevate.mp4.mp4" autoplay loop muted></video>
+            <video src="feed.mp4" autoplay loop muted></video>
         </div>
 
-        <!-- Right box for live camera stream -->
+        <!-- Right box for live camera stream with animated border -->
         <div class="camera-box">
             <div class="camera-placeholder">Live Stream Here</div>
         </div>
